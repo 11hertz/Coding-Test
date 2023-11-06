@@ -1,49 +1,19 @@
 function solution(new_id) {
-    var answer = '';
+    const regexr = /[\{\}\[\]\/?,;:|\)*~`!^\+<>@\#$%&\\\=\(\'\"]/gi;
+    const regexr2 = /[".."]+/g;
+    const regexr3 = /^\.|\.$/gi;
     
-    var first = new_id.toLowerCase();
-   
-    var regexr = /[\{\}\[\]\/?,;:|\)*~`!^\+<>@\#$%&\\\=\(\'\"]/gi;
+    let answer = new_id.toLowerCase().replace(regexr, '').replace(regexr2, '.').replace(regexr3, '').slice(0,15).replace(regexr3, '');
     
-    var second = first.replace(regexr, '');
-    
-    console.log(second);
-    
-    var regexr2 = /[".."]+/g;
-    
-    var third = second.replace(regexr2, '.');
-    console.log(third);
-    
-    var regexr3 = /^\.|\.$/gi;
-    
-    var fourth = third.replace(regexr3, '');
-    
-    console.log(fourth);
-    
-    if(fourth.length === 0) {
-        fourth = 'a';
+    if(answer.length === 0) {
+        answer = 'a';
     }
-    console.log(fourth);
+
+    let str = answer.charAt(answer.length-1);
     
-    var fifth = fourth;
-    
-    console.log(fifth);
-    
-    var str = fifth.charAt(fifth.length-1);
-    
-    while(fifth.length < 3) {
-        fifth += str;
+    while(answer.length < 3) {
+        answer += str;
     }
-    
-    console.log(fifth);
-    
-    var sixth = fifth.slice(0,15);
-    console.log(sixth);
-    
-    var seventh = sixth.replace(regexr3, '');
-    console.log(seventh);
-    
-    answer = seventh;
     
     return answer;
 }

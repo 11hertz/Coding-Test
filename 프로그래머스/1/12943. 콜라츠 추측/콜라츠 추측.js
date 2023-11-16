@@ -13,12 +13,6 @@ function solution(num) {
         count++;
       } 
     }
-    
-    if(num === 1) {
-      answer = count;
-    } else {
-      answer = -1;
-    }
-    
-    return answer;
+
+    return (num === 1) ? count : -1;
 }

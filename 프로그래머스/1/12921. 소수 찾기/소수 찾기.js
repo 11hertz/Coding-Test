@@ -6,14 +6,10 @@ function solution(n) {
     }
     
     for(let i = 2; i <= n / 2; i++) {
-        for(let j = i * 2; j <= n; j += i) {
+        for(let j = i + i; j <= n; j += i) {
             if(arr[i] === 0) continue;
             arr[j] = 0;
         }
     }
-    
-    const res = arr.filter(x => x !== 0);
-    console.log(res);
-    
-    return res.length;
+    return arr.filter(x => x !== 0).length;
 }

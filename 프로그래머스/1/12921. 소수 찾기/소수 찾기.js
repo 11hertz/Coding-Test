@@ -5,7 +5,7 @@ function solution(n) {
         arr[i] = i;
     }
     
-    for(let i = 2; i <= n / 2; i++) {
+    for(let i = 2; i <= Math.sqrt(n); i++) {
         for(let j = i + i; j <= n; j += i) {
             if(arr[i] === 0) continue;
             arr[j] = 0;

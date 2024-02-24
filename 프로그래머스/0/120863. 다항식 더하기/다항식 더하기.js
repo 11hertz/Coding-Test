@@ -1,5 +1,4 @@
 function solution(polynomial) {
-    let answer = '';
     const xArr = polynomial.split(' + ').filter(x => x.includes('x'));
     const numArr = polynomial.split(' + ').filter(x => !x.includes('x'));
     
@@ -7,13 +6,10 @@ function solution(polynomial) {
     let numTerm = numArr.map(x => Number(x)).reduce((v, acc) => v + acc, 0);
 
     if(xTerm && numTerm) {
-        answer = (xTerm === 1) ? `x + ${numTerm}` : `${xTerm}x + ${numTerm}`;   
+        return (xTerm === 1) ? `x + ${numTerm}` : `${xTerm}x + ${numTerm}`;   
     } else if(xTerm && !numTerm) {
-        answer = (xTerm === 1) ? 'x' : `${xTerm}x`;   
+        return (xTerm === 1) ? 'x' : `${xTerm}x`;   
     } else if(!xTerm && numTerm) {
-        answer = `${numTerm}`;   
+        return `${numTerm}`;   
     } 
-    
-    
-    return answer;
 }

@@ -5,7 +5,7 @@ function solution(n, lost, reserve) {
     for(let i = 0; i < lostArr.length; i++) {
         for(let j = 0; j < reserveArr.length; j++) {
             if(lostArr[i] - reserveArr[j] === 1 || lostArr[i] - reserveArr[j] === -1) {
-                lostArr.shift();
+                lostArr.splice(i, 1);
                 continue;
             }
         }

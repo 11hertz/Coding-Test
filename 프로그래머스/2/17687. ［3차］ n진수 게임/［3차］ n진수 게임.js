@@ -1,9 +1,8 @@
 function solution(n, t, m, p) {
     let answer = '';
-    
     let str = '';
     
-    for(let i = 0; i <= 50000; i++) {
+    for(let i = 0; i <= (1000 * m); i++) {
         let num = i.toString(n).toUpperCase();
         str += num;
     }

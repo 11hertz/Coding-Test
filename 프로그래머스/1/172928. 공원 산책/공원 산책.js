@@ -22,7 +22,7 @@ function solution(park, routes) {
         let act = splitRoutes[i];
         const [dir, distance] = act;
         let [NS, WE] = directions[dir];
-        console.log(dir, distance, [NS, WE]);
+
         for(let i = 0; i < +distance; i++) {
             robotDog[0] += NS;
             robotDog[1] += WE;
@@ -35,7 +35,5 @@ function solution(park, routes) {
         pointY = robotDog[0];
         pointX = robotDog[1];
     }
-
-    
     return robotDog;
 }

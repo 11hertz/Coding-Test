@@ -4,9 +4,9 @@ function solution(n) {
     const r = 1234567;
     
     let fibo = (num) => {
-        if(num === 1 || num === 2) return num;
+        if(num === 1 || num === 2) return num % r;
         if(!(num in cache)) {
-            cache[num] = fibo(num - 1) % r + fibo(num - 2) % r; 
+            cache[num] = fibo(num - 1) % r+ fibo(num - 2) % r; 
         }
         return cache[num] % r;
     }
@@ -49,5 +49,5 @@ function solution(n) {
     // 2 2 2
     
     
-    return fibo(n) % 1234567;
+    return fibo(n) % r;
 }

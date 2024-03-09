@@ -2,11 +2,12 @@ function solution(n) {
     let answer = 0;
     let flag = true;
     let number = n;
-    let nOneLen = number.toString(2).split('').filter(x => x === '1').length;
+    let nLen = number.toString(2).match(/1/g).length;
+   
     while(flag) {
         number++;
-        let countOne = number.toString(2).split('').filter(x => x === '1').length;
-        if(countOne === nOneLen) {
+        let nextNumLen = number.toString(2).match(/1/g).length;
+        if(nLen === nextNumLen) {
             answer = number;
             flag = false;
         }

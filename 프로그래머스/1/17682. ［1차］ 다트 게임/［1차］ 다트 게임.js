@@ -19,6 +19,6 @@ function solution(dartResult) {
             arr[arr.length - 1] *= -1;
         }
     }
-    console.log(arr);
+   
     return arr.reduce((v, acc) => v + acc, 0);
 }

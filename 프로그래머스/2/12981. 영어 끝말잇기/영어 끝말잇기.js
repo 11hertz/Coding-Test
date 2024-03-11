@@ -1,8 +1,6 @@
 function solution(n, words) {
     let answer = [];
-    
     let loserIdx = 0;
-    
     let mentionedWords = new Map();
     
     mentionedWords.set(words[0], 1);

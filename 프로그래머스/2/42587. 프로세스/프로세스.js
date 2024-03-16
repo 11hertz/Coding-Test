@@ -14,7 +14,6 @@ function solution(priorities, location) {
             if(location > 0) location -= 1;
             else location = priorities.length - 1;
         }
-        
     }
     
     return answer;

@@ -3,6 +3,8 @@ function solution(cacheSize, cities) {
     
     let answer = 0;
     let cache = [];
+    const MISS = 5;
+    const HIT = 1;
     let lowerCities = cities.map(x => x.toLowerCase());
     
     for(let city of lowerCities) {
@@ -11,11 +13,11 @@ function solution(cacheSize, cities) {
         if(idx === -1) {
             cache.unshift(city);
             if(cache.length > cacheSize) cache.pop();
-            answer += 5;
+            answer += MISS;
         } else {
             cache.splice(idx, 1);
             cache.unshift(city);
-            answer += 1;
+            answer += HIT;
         }
     }
     

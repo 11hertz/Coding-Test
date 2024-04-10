@@ -1,17 +1,9 @@
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split(' ');
 
-let input = [5, 8, 4];
+let [a, b, c] = input;
 
-readline.on('line', function(line) {
-    input = line.split(' ').map(el => parseInt(el));
-}).on('close', function(){
-    let [a, b, c] = input;
-    console.log((a + b) % c);
-    console.log(((a % c) + (b % c)) % c);
-    console.log((a * b) % c);
-    console.log(((a % c) * (b % c)) % c);
-    process.exit();
-});
+console.log((+a + +b) % c);
+console.log(((a % c) + (b % c)) % c);
+console.log((a * b) % c);
+console.log(((a % c) * (b % c)) % c);

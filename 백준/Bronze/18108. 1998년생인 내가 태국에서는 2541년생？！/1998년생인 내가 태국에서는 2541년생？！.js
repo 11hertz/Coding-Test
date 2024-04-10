@@ -1,13 +1,3 @@
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
-
-let input = [2541];
-
-readline.on('line', function(line) {
-    input = line.split(' ').map(el => parseInt(el));
-}).on('close', function(){
-    console.log(input[0] - 543);
-    process.exit();
-});
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split(' ');
+console.log(+input - 543);

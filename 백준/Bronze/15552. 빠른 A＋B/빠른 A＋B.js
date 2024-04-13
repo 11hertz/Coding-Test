@@ -14,3 +14,4 @@ for (let i = 1; i <= repeatNum; i++) {
 }
 
 console.log(answer);
+

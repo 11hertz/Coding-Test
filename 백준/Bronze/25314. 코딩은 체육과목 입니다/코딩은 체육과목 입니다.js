@@ -1,5 +1,7 @@
-const fs = require('fs');
-const input = fs.readFileSync('/dev/stdin').toString().trim();
+const input = require('fs')
+  .readFileSync(process.platform === 'linux' ? '/dev/stdin' : './input.txt')
+  .toString()
+  .trim();
 
 let repeatNum = parseInt(input / 4);
 let integerStr = '';

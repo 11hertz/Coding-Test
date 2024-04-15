@@ -4,9 +4,5 @@ const input = require('fs')
   .trim();
 
 for (let i = 1; i <= input; i++) {
-  let stars = '';
-  for (let j = 0; j < i; j++) {
-    stars += '*';
-  }
-  console.log(stars);
+  console.log('*'.repeat(i));
 }

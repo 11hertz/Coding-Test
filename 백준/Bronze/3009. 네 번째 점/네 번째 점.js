@@ -5,32 +5,20 @@ const input = require('fs')
   .split('\n')
   .map(x => x.split(' ').map(Number));
 
-let xArr = [];
-let yArr = [];
-
-for (let [X, Y] of input) {
-  xArr.push(X);
-  yArr.push(Y);
-}
-
-const pointCache = arr => {
-  let cache = {};
-  for (let i = 0; i < arr.length; i++) {
-    let x = arr[i];
-    if (cache[x]) cache[x] += 1;
-    else cache[x] = 1;
-  }
-  return cache;
-};
-
 let answer = '';
 
-for (let [K, V] of Object.entries(pointCache(xArr))) {
-  if (V === 1) answer += K + ' ';
-}
+if (input[0][0] === input[1][0] && input[1][0] !== input[2][0])
+  answer += input[2][0] + ' ';
+else if (input[0][0] === input[2][0] && input[2][0] !== input[1][0])
+  answer += input[1][0] + ' ';
+else if (input[1][0] === input[2][0] && input[2][0] !== input[0][0])
+  answer += input[0][0] + ' ';
 
-for (let [K, V] of Object.entries(pointCache(yArr))) {
-  if (V === 1) answer += K;
-}
+if (input[0][1] === input[1][1] && input[1][1] !== input[2][1])
+  answer += input[2][1];
+else if (input[0][1] === input[2][1] && input[2][1] !== input[1][1])
+  answer += input[1][1];
+else if (input[1][1] === input[2][1] && input[2][1] !== input[0][1])
+  answer += input[0][1];
 
 console.log(answer);
